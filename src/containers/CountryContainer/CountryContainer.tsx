@@ -31,7 +31,11 @@ const CountryContainer: React.FC = () => {
     <div className="container mt-5">
       <div className="country-container">
         <div className="country-list">
-          <CountryList onSelectCountry={setSelectedCountry} countries={countries}/>
+          <CountryList
+            onSelectCountry={setSelectedCountry}
+            countries={countries}
+            selectedCountry={selectedCountry}
+          />
         </div>
         <div className="country-details">
           {selectedCountry ? (

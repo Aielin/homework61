@@ -1,0 +1,25 @@
+.country-container {
+  display: flex;
+  gap: 16px;
+}
+
+.country-list {
+  width: 30%;
+  border-right: 1px solid #ddd;
+  padding: 16px;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.country-details {
+  width: 70%;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.select-country-prompt {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}

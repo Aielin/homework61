@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BASE_URL, COUNTRIES_URL } from '../../constants.ts';
 import CountryList from '../../components/CountryList/CountryList';
+import CountryDetails from '../../components/CountryDetails/CountryDetails.tsx';
+import './CountryContainer.css';
 
 interface Country {
   name: string;
@@ -27,13 +29,17 @@ const CountryContainer: React.FC = () => {
 
   return (
     <div className="container mt-5">
-      <CountryList onSelectCountry={setSelectedCountry} countries={countries} />
-      <div>
-        {selectedCountry ? (
-          <p>Вы выбрали: {selectedCountry}</p>
-        ) : (
-          <p>Выберите страну</p>
-        )}
+      <div className="country-container">
+        <div className="country-list">
+          <CountryList onSelectCountry={setSelectedCountry} countries={countries}/>
+        </div>
+        <div className="country-details">
+          {selectedCountry ? (
+            <CountryDetails alpha3Code={selectedCountry}/>
+          ) : (
+            <p className="select-country-prompt">Выберите страну</p>
+          )}
+        </div>
       </div>
     </div>
   );
